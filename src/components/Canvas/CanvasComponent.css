@@ -1,0 +1,56 @@
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form__link{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.from__input-url{
+    display: block;
+    width: 250px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 6px;
+    outline: none;
+    margin: 0 0 10px 0;
+    padding: 5px;
+}
+
+.form__btn-link{
+    display: block;
+    width: 250px;
+    height: 35px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+.form__input-file{
+    display: block;
+    width: 250px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 6px;
+    outline: none;
+    margin: 0 0 10px 0;
+    padding: 5px;
+}
+
+.hover__color{
+    display: block;
+    margin: 6px;
+}
+
+.image__size{
+    display: block;
+    margin: 10px;
+}

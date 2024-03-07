@@ -12,7 +12,7 @@ const ImageSizeComponent: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [hoveredColor, setHoveredColor] = useState<string | null>(null);
   const [hoveredPixelCoordinates, setHoveredPixelCoordinates] = useState<{ x: number; y: number } | null>(null);
-  const [clickedPixelCoordinates, setClickedPixelCoordinates] = useState<{ x: number; y: number } | null>(null);
+  const [lastClickedPixelCoordinates, setLastClickedPixelCoordinates] = useState<{ x: number; y: number } | null>(null);
   const [isHoveringCanvas, setIsHoveringCanvas] = useState<boolean>(false);
   const [lastClickedColor, setLastClickedColor] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -115,7 +115,7 @@ const ImageSizeComponent: React.FC = () => {
     try {
       const pixel = context.getImageData(x, y, 1, 1).data;
       const color = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
-      setClickedPixelCoordinates({ x, y });
+      setLastClickedPixelCoordinates({ x, y });
       setLastClickedColor(color);
     } catch (error) {
       console.error("Failed to get pixel data:", error);
@@ -193,9 +193,9 @@ const ImageSizeComponent: React.FC = () => {
                         backgroundColor: lastClickedColor,
                       }}
                   />
-                  {clickedPixelCoordinates && (
+                  {lastClickedPixelCoordinates && (
                       <p>
-                        Координаты: X: {clickedPixelCoordinates.x},Y: {clickedPixelCoordinates.y}
+                        Координаты: X: {lastClickedPixelCoordinates.x},Y: {lastClickedPixelCoordinates.y}
                       </p>
                   )}
                 </>

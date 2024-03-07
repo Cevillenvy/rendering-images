@@ -1,3 +1,6 @@
+# Ссылка на ресурс
+[Ссылка](http://89.111.172.78/build/index.html)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
